@@ -19,7 +19,7 @@ class App extends Component {
                     height="30"
                     className="d-inline-block align-top"
                 />
-                {' React Bootstrap'}
+                {' Form Wizard'}
               </Navbar.Brand>
             </Navbar>
             <Jumbotron>
