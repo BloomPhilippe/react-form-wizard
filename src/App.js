@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router } from 'react-router-dom'
-import { Navbar,  Jumbotron, Container, Row, Col } from 'react-bootstrap';
+import { Navbar,  Jumbotron, Container } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import Store from './Store/configureStore';
 import Routes from './Routes/Routes';
@@ -30,11 +30,7 @@ class App extends Component {
                 <h1>Form Wizard</h1>
               </Jumbotron>
               <Container>
-                <Row>
-                  <Col>
-                    <Routes/>
-                  </Col>
-                </Row>
+                <Routes/>
               </Container>
             </div>
           </Router>

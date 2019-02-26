@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import Input from './Input'
+import { Row, Col } from 'react-bootstrap';
 
 class Information extends Component {
     render() {
         return (
-            <div>
-                <p>TOTO</p>
-            </div>
+            <Col md={7}>
+                <Input label='Firstname' type='text'/>
+                <Input label='Lastname' type='text'/>
+            </Col>
         );
     }
 }
