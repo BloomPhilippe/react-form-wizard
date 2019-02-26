@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar,  Jumbotron } from 'react-bootstrap';
+import { Navbar,  Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import Store from './Store/configureStore';
 import logo from './logo.svg';
@@ -26,6 +26,13 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               <h1>Form Wizard</h1>
             </Jumbotron>
+            <Container>
+              <Row>
+                <Col>
+
+                </Col>
+              </Row>
+            </Container>
           </div>
         </Provider>
     );
