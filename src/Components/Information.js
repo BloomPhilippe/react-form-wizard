@@ -1,8 +1,17 @@
 import React, {Component} from 'react';
 import Input from './Input'
 import { Row, Col, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 
 class Information extends Component {
+    constructor(props){
+        super(props)
+    }
+
+    _nextStep = () => {
+
+    }
+
     render() {
         return (
             <Col>
@@ -12,7 +21,8 @@ class Information extends Component {
                         <Input label='Lastname' type='text'/>
                     </Col>
                     <Col md={12}>
-                        <Button variant="primary" size="lg">
+                        <Link to="/address">Home</Link>
+                        <Button variant="primary" size="lg" href="/address">
                             Next
                         </Button>
                     </Col>

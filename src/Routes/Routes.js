@@ -22,14 +22,7 @@ class Routes extends Component {
     render() {
         return (
             <Row>
-                {this.routes.map((route, i) => <Route
-                    key={i}
-                    path={route.path}
-                    render={props => (
-                        // pass the sub-routes down to keep nesting
-                        <route.component {...props} routes={route.routes} />
-                    )}
-                />)}
+                {this.routes.map((route, i) => <Route exact key={i} path={route.path} component={route.component}/>)}
             </Row>
         );
     }
