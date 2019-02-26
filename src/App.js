@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Navbar, Container,  Jumbotron } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,20 +7,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#home">
+            <img
+                alt=""
+                src="/images/logo.svg"
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+            />
+            {' React Bootstrap'}
+          </Navbar.Brand>
+        </Navbar>
+        <Jumbotron>
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <h1>Form Wizard</h1>
+        </Jumbotron>
       </div>
     );
   }
