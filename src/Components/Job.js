@@ -5,6 +5,11 @@ import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
 
 class Job extends Component {
+    constructor(props){
+        super(props)
+        this.isValid = false
+    }
+
     render() {
         return (
             <Col className="section">

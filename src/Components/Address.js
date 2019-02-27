@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import Input from './Input'
-import { Row, Col } from 'react-bootstrap';
+import {Row, Col, Button} from 'react-bootstrap';
 import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
 
 class Address extends Component {
+
+    constructor(props){
+        super(props)
+        this.isValid = false
+    }
+
+    _nextStep() {
+        this.props.history.push('/job')
+    }
+
     render() {
         return (
             <Col className="section">
@@ -18,7 +28,9 @@ class Address extends Component {
                     </Col>
                     <Col md={12}>
                         <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
-                        <Link className="btn btn-primary btn-lg" to="/job">Next</Link>
+                        <Button variant="primary" size="lg" onClick={() => this._nextStep()}>
+                            Next
+                        </Button>
                     </Col>
                 </Row>
             </Col>

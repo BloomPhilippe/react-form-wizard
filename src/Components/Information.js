@@ -26,7 +26,7 @@ class Information extends Component {
                     </Col>
                     <Col md={12}>
                         <Button variant="primary" size="lg" onClick={() => this._nextStep()}>
-                            Finish
+                            Next
                         </Button>
                     </Col>
                 </Row>
