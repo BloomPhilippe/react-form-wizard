@@ -26,6 +26,12 @@ Solution :
 ````
 
 
+- setState
+
+N'oubliez pas que cette méthode est asynchrone !
+
+Le deuxième paramètre de setState est un callback...
+
 
 
 
