@@ -43,6 +43,7 @@ function setInputs(state = initialState, action) {
     let nextState
     switch (action.type) {
         case 'SET_FIRSTNAME':
+            console.log('eeeeeeeeeeee')
             return nextState = {
                 ...state,
                 firstName: action.value

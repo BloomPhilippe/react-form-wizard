@@ -39,7 +39,7 @@ class Input extends Component {
             <Form.Group>
                 <Form.Label>{this.props.label}</Form.Label>
                 {this.props.elementType === 'input' &&
-                    <Form.Control type={this.props.type} onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern} min={this.props.min} max={this.props.max}/>
+                    <Form.Control type={this.props.type} onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern} min={this.props.min} max={this.props.max} defaultValue={this.props.value}/>
                 }
                 {this.props.elementType === 'textarea' &&
                     <Form.Control as="textarea" rows="3" onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern}/>
@@ -50,8 +50,4 @@ class Input extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return state.setInputs
-}
-
-export default connect(mapStateToProps)(Input)
+export default connect()(Input)
