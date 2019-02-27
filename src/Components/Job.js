@@ -35,7 +35,7 @@ class Job extends Component {
                         <Input label='Description' elementType='textarea' action="SET_JOBDESCRIPTION" required={true} value={this.props.form.jobDescription.value}/>
                     </Col>
                     <Col md={12}>
-                        <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
+                        <Link className="btn btn-primary btn-lg btn-previous" to="/address">Previous</Link>
                         <Button variant="primary" size="lg" onClick={() => this._nextStep()}>
                             Finish
                         </Button>
