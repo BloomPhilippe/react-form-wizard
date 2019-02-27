@@ -32,7 +32,9 @@ N'oubliez pas que cette méthode est asynchrone !
 
 Le deuxième paramètre de setState est un callback...
 
+- Modifier un state via un enfant
 
+Il est possible de modifier un state parent via un enfant en passant en props à l'enfant une fonction qui se chargera de modifier le state.
 
 
 
