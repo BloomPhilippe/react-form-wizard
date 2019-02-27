@@ -23,9 +23,14 @@ class Input extends Component {
     }
 
     _setValue(event){
+        console.log(event.target)
+        console.log(event.target.checkValidity())
         const action = {
             type: this.props.action,
-            value: event.target.value
+            value: {
+                value: event.target.value,
+                isValid: event.target.checkValidity(),
+            }
         }
 
         this.props.dispatch(action)
@@ -36,10 +41,10 @@ class Input extends Component {
             <Form.Group>
                 <Form.Label>{this.props.label}</Form.Label>
                 {this.props.elementType === 'input' &&
-                    <Form.Control type={this.props.type} onBlur={(event) => this._setValue(event)}  />
+                    <Form.Control type={this.props.type} onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern} min={this.props.min} max={this.props.max}/>
                 }
                 {this.props.elementType === 'textarea' &&
-                    <Form.Control as="textarea" rows="3" onBlur={(event) => this._setValue(event)} />
+                    <Form.Control as="textarea" rows="3" onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern}/>
                 }
             </Form.Group>
 

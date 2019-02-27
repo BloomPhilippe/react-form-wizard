@@ -11,12 +11,14 @@ class Job extends Component {
                 <h3>Job</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
-                        <Input label='Job title' type='text'  action="SET_JOBTITLE"/>
-                        <Input label='Description' elementType='textarea' action="SET_JOBDESCRIPTION"/>
+                        <Input label='Job title' type='text' action="SET_JOBTITLE" required={true}/>
+                        <Input label='Description' elementType='textarea' action="SET_JOBDESCRIPTION" required={true}/>
                     </Col>
                     <Col md={12}>
                         <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
-                        <Link className="btn btn-primary btn-lg" to="/job">Next</Link>
+                        <Button variant="primary" size="lg">
+                            Finish
+                        </Button>
                     </Col>
                 </Row>
             </Col>

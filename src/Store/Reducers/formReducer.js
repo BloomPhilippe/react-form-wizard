@@ -1,12 +1,36 @@
 const initialState = {
-    firstName: null,
-    lastName: null,
-    street: null,
-    number: null,
-    zip: null,
-    city: null,
-    jobTitle: null,
-    jobDescription: null,
+    firstName: {
+        value: null,
+        isValid: false,
+    },
+    lastName: {
+        value: null,
+        isValid: false,
+    },
+    street: {
+        value: null,
+        isValid: false,
+    },
+    number: {
+        value: null,
+        isValid: false,
+    },
+    zip: {
+        value: null,
+        isValid: false,
+    },
+    city: {
+        value: null,
+        isValid: false,
+    },
+    jobTitle: {
+        value: null,
+        isValid: false,
+    },
+    jobDescription: {
+        value: null,
+        isValid: false,
+    },
 }
 
 /**
