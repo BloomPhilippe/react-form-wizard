@@ -19,6 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://bloomphilippe.github.io/projets/react-form-wizard",
   "eslintConfig": {
     "extends": "react-app"
   },

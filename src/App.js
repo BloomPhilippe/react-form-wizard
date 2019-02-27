@@ -16,7 +16,7 @@ class App extends Component {
                 <Navbar.Brand href="#home">
                   <img
                       alt=""
-                      src="/images/logo.svg"
+                      src="/projets/react-form-wizard/images/logo.svg"
                       width="30"
                       height="30"
                       className="d-inline-block align-top"
@@ -29,7 +29,7 @@ class App extends Component {
                 <h1>Form Wizard</h1>
               </Jumbotron>
               <Container>
-                <Router>
+                <Router basename="/projets/react-form-wizard">
                   <Routes/>
                 </Router>
               </Container>
