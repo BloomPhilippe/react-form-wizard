@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Input from './Input'
 import { Row, Col, Button } from 'react-bootstrap';
 import '../Styles/formStep.css'
+import {Link} from "react-router-dom";
 
 class Job extends Component {
     render() {
@@ -14,12 +15,8 @@ class Job extends Component {
                         <Input label='Description' elementType='textarea'/>
                     </Col>
                     <Col md={12}>
-                        <Button variant="primary" size="lg" className="btn-previous" href="/address">
-                            Previous
-                        </Button>
-                        <Button variant="primary" size="lg">
-                            Finish
-                        </Button>
+                        <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
+                        <Link className="btn btn-primary btn-lg" to="/job">Next</Link>
                     </Col>
                 </Row>
             </Col>

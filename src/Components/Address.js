@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Input from './Input'
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
 
