@@ -1,3 +1,37 @@
+# React Form Wizard
+
+
+# Rappel
+
+- onClick
+
+:exclamation: Erreur souvent incomprise avec l'attribut onClick
+
+Avec le code ci-dessous, nous passons une fonction à l'attribut onClick.
+Le problème c'est au moment du render, la fonction sera applelée !
+Mais on souhaite qu'elle soit applelé seulement au click !
+
+````
+<Button variant="primary" size="lg" onClick={this._nextStep()}>
+        Finish
+</Button>
+````
+
+Solution :
+
+````
+<Button variant="primary" size="lg" onClick={() => this._nextStep()}>
+        Finish
+</Button>
+````
+
+
+
+
+
+
+# Instruction
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
