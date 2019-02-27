@@ -31,6 +31,7 @@ const initialState = {
         value: null,
         isValid: false,
     },
+    isCompleted: false
 }
 
 /**
@@ -82,6 +83,11 @@ function setInputs(state = initialState, action) {
             return nextState = {
                 ...state,
                 jobDescription: action.value
+            }
+        case 'TO_COMPLETE':
+            return nextState = {
+                ...state,
+                isCompleted: true
             }
         default:
             return state

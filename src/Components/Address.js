@@ -35,7 +35,7 @@ class Address extends Component {
                 <Row className="justify-content-center pb-15">
                     <Col md={7}>
                         <Input label='Street' type='text' action="SET_STREET" required={true} value={this.props.form.street.value}/>
-                        <Input label='Number' type='text' action="SET_NUMBER" required={false} pattern="[0-9A-Za-z]{3,50}" value={this.props.form.number.value}/>
+                        <Input label='Number' type='text' action="SET_NUMBER" required={false} pattern="[0-9A-Za-z]{0,50}" value={this.props.form.number.value}/>
                         <Input label='Zip code' type='number' action="SET_ZIP" required={true} min="1000" max="9999" value={this.props.form.zip.value}/>
                         <Input label='City' type='text' action="SET_CITY" required={true} pattern="[A-Za-z]{3,50}" value={this.props.form.city.value}/>
                     </Col>

@@ -15,9 +15,11 @@ class Job extends Component {
 
     _nextStep() {
         if(this.props.form.jobTitle.isValid && this.props.form.jobDescription.isValid){
-            this.setState({
-                isValid: true
-            })
+            const action = {
+                type: 'TO_COMPLETE',
+            }
+            this.props.dispatch(action)
+            this.props.history.push('/result')
         }else{
             this.setState({
                 isValid: false
