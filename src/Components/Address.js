@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import Input from './Input'
 import { Row, Col, Button } from 'react-bootstrap';
 import '../Styles/formStep.css'
+import {Link} from "react-router-dom";
 
 class Address extends Component {
     render() {
         return (
-            <Col>
+            <Col className="section">
+                <h3>Address</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
                         <Input label='Street' type='text'/>
@@ -15,12 +17,8 @@ class Address extends Component {
                         <Input label='City' type='text'/>
                     </Col>
                     <Col md={12}>
-                        <Button variant="primary" size="lg" className="btn-previous"  href="/">
-                            Previous
-                        </Button>
-                        <Button variant="primary" size="lg"  href="/job">
-                            Next
-                        </Button>
+                        <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
+                        <Link className="btn btn-primary btn-lg" to="/job">Next</Link>
                     </Col>
                 </Row>
             </Col>

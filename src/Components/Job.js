@@ -6,7 +6,8 @@ import '../Styles/formStep.css'
 class Job extends Component {
     render() {
         return (
-            <Col>
+            <Col className="section">
+                <h3>Job</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
                         <Input label='Job title' type='text'/>

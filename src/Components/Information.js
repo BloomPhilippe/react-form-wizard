@@ -15,16 +15,15 @@ class Information extends Component {
 
     render() {
         return (
-            <Col>
+            <Col className="section">
+                <h3>Informations</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
                         <Input label='Firstname' type='text'/>
                         <Input label='Lastname' type='text'/>
                     </Col>
                     <Col md={12}>
-                        <Button variant="primary" size="lg" href="/address">
-                            Next
-                        </Button>
+                        <Link className="btn btn-primary btn-lg" to="/address">Next</Link>
                     </Col>
                 </Row>
             </Col>
