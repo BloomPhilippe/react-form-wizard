@@ -14,7 +14,7 @@ class Job extends Component {
     }
 
     _nextStep() {
-        if(this.props.form.firstName.jobTitle && this.props.form.lastName.jobDescription){
+        if(this.props.form.jobTitle.isValid && this.props.form.jobDescription.isValid){
 
         }else{
             this.setState({
@@ -34,7 +34,7 @@ class Job extends Component {
                     </Col>
                     <Col md={12}>
                         <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
-                        <Button variant="primary" size="lg">
+                        <Button variant="primary" size="lg" onClick={() => this._nextStep()}>
                             Finish
                         </Button>
                     </Col>
