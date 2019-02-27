@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {BrowserRouter as Router } from 'react-router-dom'
-import { Navbar,  Jumbotron, Container } from 'react-bootstrap';
-import { Provider } from 'react-redux';
-import Store from './Store/configureStore';
-import Routes from './Routes/Routes';
-import logo from './logo.svg';
-import './App.css';
+import { Navbar,  Jumbotron, Container } from 'react-bootstrap'
+import { Provider } from 'react-redux'
+import Store from './Store/configureStore'
+import Routes from './Routes/Routes'
+import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
   render() {
@@ -35,8 +35,8 @@ class App extends Component {
             </div>
           </Router>
         </Provider>
-    );
+    )
   }
 }
 
-export default App;
+export default App
