@@ -1,25 +1,33 @@
 import React, {Component} from 'react'
 import Input from './Input'
-import { Row, Col, Button } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Row, Col, Button, Alert } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import '../Styles/formStep.css'
 
 class Information extends Component {
 
     constructor(props){
         super(props)
-        this.isValid = false
+        this.state = {
+            isValid: true
+        }
     }
 
     _nextStep() {
-        this.props.history.push('/address')
+        if(this.props.form.firstName.isValid && this.props.form.lastName.isValid){
+            this.props.history.push('/address')
+        }else{
+            this.setState({
+                isValid: false
+            })
+        }
     }
 
     render() {
         return (
             <Col className="section">
                 <h3>Informations</h3>
-                <Row className="justify-content-center">
+                <Row className="justify-content-center pb-15">
                     <Col md={7}>
                         <Input label='Firstname' type='text' action="SET_FIRSTNAME" required={true} pattern="[A-Za-z]{3,50}"/>
                         <Input label='Lastname' type='text' action="SET_LASTNAME" required={true} pattern="[A-Za-z]{3,50}"/>
@@ -30,13 +38,21 @@ class Information extends Component {
                         </Button>
                     </Col>
                 </Row>
+                {!this.state.isValid &&
+                    <Alert variant="danger">
+                        Some required fields are missing, empty or in bad format
+                    </Alert>
+                }
+
             </Col>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return state.setInputs
+    return {
+        form: state.setInputs
+    }
 }
 
 export default connect(mapStateToProps)(Information)
