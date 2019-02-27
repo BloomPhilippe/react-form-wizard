@@ -40,6 +40,7 @@ Il est possible de modifier un state parent via un enfant en passant en props à
 - Tests
 
 Utiliser Enzyme
+Utiliser SINON.JS
 
 
 # Instruction
