@@ -42,6 +42,25 @@ Il est possible de modifier un state parent via un enfant en passant en props à
 Utiliser Enzyme
 Utiliser SINON.JS
 
+- Build préparation
+
+Dans package.jon, ajouter l'url de votre projet (homepage) afin que react sache quelle path appliquer à vous assets
+
+Exemple : 
+
+````
+ "homepage": "https://bloomphilippe.github.io/projets/react-form-wizard",
+````
+
+Si vous utiliser react-router, ajouter le basename
+
+Exemple :
+````
+basename="/projets/react-form-wizard"
+````
+
+S'il y a des chemins vers des fichiers dans votre code, n'oublier de les gérer...
+
 
 # Instruction
 
