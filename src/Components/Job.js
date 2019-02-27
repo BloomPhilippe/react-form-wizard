@@ -15,7 +15,9 @@ class Job extends Component {
 
     _nextStep() {
         if(this.props.form.jobTitle.isValid && this.props.form.jobDescription.isValid){
-
+            this.setState({
+                isValid: true
+            })
         }else{
             this.setState({
                 isValid: false
