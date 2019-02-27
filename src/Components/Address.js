@@ -3,16 +3,29 @@ import Input from './Input'
 import {Row, Col, Button} from 'react-bootstrap';
 import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
+import {connect} from "react-redux";
 
 class Address extends Component {
 
     constructor(props){
         super(props)
-        this.isValid = false
+        this.state = {
+            isValid: true
+        }
     }
 
     _nextStep() {
-        this.props.history.push('/job')
+        if(this.props.form.street.isValid &&
+            this.props.form.number.isValid &&
+            this.props.form.zip.isValid &&
+            this.props.form.city.isValid
+        ){
+            this.props.history.push('/job')
+        }else{
+            this.setState({
+                isValid: false
+            })
+        }
     }
 
     render() {
@@ -21,10 +34,10 @@ class Address extends Component {
                 <h3>Address</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
-                        <Input label='Street' type='text' action="SET_STREET" required={true}/>
-                        <Input label='Number' type='text' action="SET_NUMBER" required={false} pattern="[0-9A-Za-z]{3,50}"/>
-                        <Input label='Zip code' type='number' action="SET_ZIP" required={true} min="1000" max="9999"/>
-                        <Input label='City' type='text' action="SET_CITY" required={true} pattern="[A-Za-z]{3,50}"/>
+                        <Input label='Street' type='text' action="SET_STREET" required={true} value={this.props.form.street.value}/>
+                        <Input label='Number' type='text' action="SET_NUMBER" required={false} pattern="[0-9A-Za-z]{3,50}" value={this.props.form.number.value}/>
+                        <Input label='Zip code' type='number' action="SET_ZIP" required={true} min="1000" max="9999" value={this.props.form.zip.value}/>
+                        <Input label='City' type='text' action="SET_CITY" required={true} pattern="[A-Za-z]{3,50}" value={this.props.form.city.value}/>
                     </Col>
                     <Col md={12}>
                         <Link className="btn btn-primary btn-lg btn-previous" to="/">Previous</Link>
@@ -38,4 +51,10 @@ class Address extends Component {
     }
 }
 
-export default Address;
+const mapStateToProps = (state) => {
+    return {
+        form: state.setInputs
+    }
+}
+
+export default connect(mapStateToProps)(Address)

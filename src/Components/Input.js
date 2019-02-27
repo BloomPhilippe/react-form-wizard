@@ -20,6 +20,7 @@ class Input extends Component {
         type: PropTypes.oneOf(['email', 'text', 'number']),
         elementType: PropTypes.oneOf(['input', 'textarea']),
         action: PropTypes.string,
+        value: PropTypes.any.isRequired,
     }
 
     _setValue(event){
@@ -42,7 +43,7 @@ class Input extends Component {
                     <Form.Control type={this.props.type} onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern} min={this.props.min} max={this.props.max} defaultValue={this.props.value}/>
                 }
                 {this.props.elementType === 'textarea' &&
-                    <Form.Control as="textarea" rows="3" onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern}/>
+                    <Form.Control as="textarea" rows="3" onBlur={(event) => this._setValue(event)} required={this.props.required} pattern={this.props.pattern} defaultValue={this.props.value}/>
                 }
             </Form.Group>
 
