@@ -23,8 +23,6 @@ class Input extends Component {
     }
 
     _setValue(event){
-        console.log(event.target)
-        console.log(event.target.checkValidity())
         const action = {
             type: this.props.action,
             value: {
