@@ -11,7 +11,7 @@ class Information extends Component {
         this.isValid = false
     }
 
-    _nextStep = () => {
+    _nextStep() {
         this.props.history.push('/address')
     }
 
@@ -25,7 +25,6 @@ class Information extends Component {
                         <Input label='Lastname' type='text' action="SET_LASTNAME" required={true} pattern="[A-Za-z]{3,50}"/>
                     </Col>
                     <Col md={12}>
-                        <Link className="btn btn-primary btn-lg" to="/address">Next</Link>
                         <Button variant="primary" size="lg" onClick={() => this._nextStep()}>
                             Finish
                         </Button>
