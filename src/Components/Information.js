@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Input from './Input'
 import { Row, Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class Information extends Component {
 
@@ -31,4 +32,8 @@ class Information extends Component {
     }
 }
 
-export default Information
+const mapStateToProps = (state) => {
+    return state.setInputs
+}
+
+export default connect(mapStateToProps)(Information)
