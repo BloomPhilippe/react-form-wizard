@@ -19,8 +19,8 @@ class Information extends Component {
                 <h3>Informations</h3>
                 <Row className="justify-content-center">
                     <Col md={7}>
-                        <Input label='Firstname' type='text'/>
-                        <Input label='Lastname' type='text'/>
+                        <Input label='Firstname' type='text' action="SET_FIRSTNAME"/>
+                        <Input label='Lastname' type='text' action="SET_LASTNAME"/>
                     </Col>
                     <Col md={12}>
                         <Link className="btn btn-primary btn-lg" to="/address">Next</Link>
