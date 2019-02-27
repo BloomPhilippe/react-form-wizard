@@ -12,12 +12,6 @@ Le problème c'est au moment du render, la fonction sera applelée !
 Mais on souhaite qu'elle soit applelé seulement au click !
 
 ````
-_nextStep = () => {
-    this.props.history.push('/address')
-}
-````
-
-````
 <Button variant="primary" size="lg" onClick={this._nextStep()}>
         Finish
 </Button>
