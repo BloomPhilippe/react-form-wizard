@@ -11,7 +11,6 @@ class App extends Component {
   render() {
     return (
         <Provider store={Store}>
-          <Router>
             <div className="App">
               <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home">
@@ -30,10 +29,11 @@ class App extends Component {
                 <h1>Form Wizard</h1>
               </Jumbotron>
               <Container>
-                <Routes/>
+                <Router>
+                  <Routes/>
+                </Router>
               </Container>
             </div>
-          </Router>
         </Provider>
     )
   }

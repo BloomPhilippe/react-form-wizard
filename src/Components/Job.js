@@ -3,23 +3,21 @@ import Input from './Input'
 import { Row, Col, Button } from 'react-bootstrap';
 import '../Styles/formStep.css'
 
-class Address extends Component {
+class Job extends Component {
     render() {
         return (
             <Col>
                 <Row className="justify-content-center">
                     <Col md={7}>
-                        <Input label='Street' type='text'/>
-                        <Input label='Number' type='number'/>
-                        <Input label='Zip code' type='number'/>
-                        <Input label='City' type='text'/>
+                        <Input label='Job title' type='text'/>
+                        <Input label='Description' elementType='textarea'/>
                     </Col>
                     <Col md={12}>
-                        <Button variant="primary" size="lg" className="btn-previous"  href="/">
+                        <Button variant="primary" size="lg" className="btn-previous" href="/address">
                             Previous
                         </Button>
-                        <Button variant="primary" size="lg"  href="/job">
-                            Next
+                        <Button variant="primary" size="lg">
+                            Finish
                         </Button>
                     </Col>
                 </Row>
@@ -28,4 +26,4 @@ class Address extends Component {
     }
 }
 
-export default Address;
+export default Job;

@@ -8,17 +8,29 @@ class Input extends Component {
         super(props)
     }
 
+    static defaultProps = {
+        elementType: 'input'
+    };
+
+
     static propTypes = {
         label: PropTypes.string,
         type: PropTypes.oneOf(['email', 'text', 'number']),
+        elementType: PropTypes.oneOf(['input', 'textarea']),
     }
 
     render() {
         return (
             <Form.Group>
                 <Form.Label>{this.props.label}</Form.Label>
-                <Form.Control type={this.props.type}/>
+                {this.props.elementType === 'input' &&
+                    <Form.Control type={this.props.type}/>
+                }
+                {this.props.elementType === 'textarea' &&
+                    <Form.Control as="textarea" rows="3" />
+                }
             </Form.Group>
+
         )
     }
 }
