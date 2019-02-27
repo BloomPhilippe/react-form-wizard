@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Input from './Input'
-import { Row, Col, Button } from 'react-bootstrap';
+import {Row, Col, Button, Alert} from 'react-bootstrap';
 import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
@@ -27,7 +27,7 @@ class Job extends Component {
         return (
             <Col className="section">
                 <h3>Job</h3>
-                <Row className="justify-content-center">
+                <Row className="justify-content-center pb-15">
                     <Col md={7}>
                         <Input label='Job title' type='text' action="SET_JOBTITLE" required={true} value={this.props.form.jobTitle.value}/>
                         <Input label='Description' elementType='textarea' action="SET_JOBDESCRIPTION" required={true} value={this.props.form.jobDescription.value}/>
@@ -39,6 +39,11 @@ class Job extends Component {
                         </Button>
                     </Col>
                 </Row>
+                {!this.state.isValid &&
+                <Alert variant="danger">
+                    Some required fields are missing, empty or in bad format
+                </Alert>
+                }
             </Col>
         );
     }

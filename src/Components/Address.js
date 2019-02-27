@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Input from './Input'
-import {Row, Col, Button} from 'react-bootstrap';
+import {Row, Col, Button, Alert} from 'react-bootstrap';
 import '../Styles/formStep.css'
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
@@ -32,7 +32,7 @@ class Address extends Component {
         return (
             <Col className="section">
                 <h3>Address</h3>
-                <Row className="justify-content-center">
+                <Row className="justify-content-center pb-15">
                     <Col md={7}>
                         <Input label='Street' type='text' action="SET_STREET" required={true} value={this.props.form.street.value}/>
                         <Input label='Number' type='text' action="SET_NUMBER" required={false} pattern="[0-9A-Za-z]{3,50}" value={this.props.form.number.value}/>
@@ -46,6 +46,11 @@ class Address extends Component {
                         </Button>
                     </Col>
                 </Row>
+                {!this.state.isValid &&
+                <Alert variant="danger">
+                    Some required fields are missing, empty or in bad format
+                </Alert>
+                }
             </Col>
         );
     }
